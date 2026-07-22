@@ -159,27 +159,18 @@ export default function Terminal({ username }) {
       }}
     >
       <div style={{ marginBottom: '1.5rem' }}>
-        <img
-          className="avatar"
-          src={`https://github.com/${username}.png`}
-          alt={username}
-        />
-        <pre
+        <h1
           style={{
             color: 'var(--accent)',
-            fontSize: 'clamp(0.5rem, 2vw, 0.9rem)',
-            lineHeight: 1.1,
+            fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
+            letterSpacing: '0.06em',
             margin: 0,
-            overflowX: 'auto',
+            textShadow: '0 0 12px rgba(57, 255, 136, 0.35)',
           }}
         >
-{String.raw`  ______      __     __
- / ____/_  __/ /   /  |____  ____  ____  ____
-/ / __/ / / / /   / /| / _ \/ __ \/ __ \/ __ \
-/ /_/ / /_/ / /   / ___ /  __/ / / / /_/ / / / /
-\____/\__, /_/   /_/  |_\___/_/ /_/\____/_/ /_/
-     /____/`}
-        </pre>
+          &gt;_ CYBERVENOM
+        </h1>
+        <p style={{ marginTop: '0.4rem', fontSize: '1.1rem' }}>Welcome to My Site</p>
         <p className="muted" style={{ marginTop: '0.5rem' }}>
           cybersecurity student // bug hunter // {username}
         </p>
