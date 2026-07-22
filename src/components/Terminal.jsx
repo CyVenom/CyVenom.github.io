@@ -43,7 +43,7 @@ function buildResponse(cmdRaw, username) {
       return [
         `${username}@github`,
         '-----------------',
-        'OS       : Windows / hacker mindset',
+        'OS       : Kali Linux, CachyOS, Ubuntu (Arch on the way)',
         'Shell    : bash / zsh',
         'Editor   : whatever ships bugs faster',
         'Uptime   : since 2021 (created_at on github)',
