@@ -1,28 +1,39 @@
 const PROJECTS = [
   {
-    name: 'Secure URL Shortener',
-    desc: 'URL shortener with ML-based threat detection and configurable access policies.',
-    stack: 'Express, SQLite, React/Vite',
+    name: 'ai-defending-ai',
+    desc: 'An AI firewall that detects and blocks prompt injection & jailbreak attacks in real time, with a live dashboard.',
+    stack: 'Python',
+    url: 'https://github.com/CyVenom/ai-defending-ai',
   },
   {
-    name: 'SpendSmart',
-    desc: 'Full-stack personal finance tracker.',
-    stack: 'Express, SQLite, React/Vite',
+    name: 'CyVen_OctoC2',
+    desc: 'GitHub-native command-and-control framework for authorized security research, with encrypted multi-channel transport.',
+    stack: 'Python',
+    url: 'https://github.com/CyVenom/CyVen_OctoC2',
   },
   {
-    name: 'MindBridge',
-    desc: 'AI mental health companion with a Claude-powered backend.',
-    stack: 'React, Vite, Tailwind, Node/Express, Supabase',
+    name: 'Reflective_XSS',
+    desc: 'Advanced reflected XSS detection framework built for web application security testing.',
+    stack: 'Python',
+    url: 'https://github.com/CyVenom/Reflective_XSS',
   },
   {
-    name: 'Vaultify',
-    desc: 'Desktop password manager with AES-256-GCM encrypted vault storage.',
-    stack: 'JavaFX 21, Maven',
+    name: 'CyVen_LivingOfTheLand',
+    desc: 'A comprehensive privilege escalation enumeration tool for Linux/Unix security assessments.',
+    stack: 'Shell',
+    url: 'https://github.com/CyVenom/CyVen_LivingOfTheLand',
   },
   {
-    name: 'ZeroPhisher',
-    desc: 'Android app that scans QR codes and URLs to flag phishing attempts.',
-    stack: 'Kotlin, Jetpack Compose',
+    name: 'Waybackurl',
+    desc: 'Reconnaissance automation tool for bug bounty hunters and penetration testers.',
+    stack: 'Python',
+    url: 'https://github.com/CyVenom/Waybackurl',
+  },
+  {
+    name: 'E_Learning_Platform',
+    desc: 'Full-stack e-learning platform.',
+    stack: 'PHP',
+    url: 'https://github.com/CyVenom/E_Learning_Platform',
   },
 ];
 
@@ -32,18 +43,24 @@ export default function Projects() {
       <div className="section-title">projects</div>
       <div style={{ display: 'grid', gap: '1rem' }}>
         {PROJECTS.map((p) => (
-          <div
+          <a
             key={p.name}
+            href={p.url}
+            target="_blank"
+            rel="noreferrer"
             style={{
+              display: 'block',
               border: '1px solid var(--border)',
               borderRadius: 6,
               padding: '1rem',
+              color: 'var(--fg)',
+              textDecoration: 'none',
             }}
           >
             <div style={{ color: 'var(--accent)', fontWeight: 700 }}>{p.name}</div>
             <div style={{ margin: '0.35rem 0' }}>{p.desc}</div>
             <div className="muted" style={{ fontSize: '0.8rem' }}>{p.stack}</div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

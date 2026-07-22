@@ -21,15 +21,16 @@ function buildResponse(cmdRaw, username) {
     case 'whoami':
       return [
         `${username}`,
-        'builder / breaker of things. writes code, reads CVEs for fun.',
-        'currently shipping side projects and poking at security tooling.',
+        'CS (Cybersecurity) student | bug hunter',
+        'CTF | hacking | security research',
+        '200+ public repos on github, mostly security tooling and full-stack builds.',
       ];
     case 'skills':
       return [
-        'languages : JavaScript/TypeScript, Python, Java, PHP',
+        'languages : Java, Python, C++, Bash, JavaScript',
         'frontend  : React, Vite, Tailwind',
-        'backend   : Node/Express, SQLite/MySQL, Supabase',
-        'security  : threat detection, access policies, vuln research',
+        'backend   : Node/Express, SQLite/MySQL, Supabase, PHP',
+        'security  : bug bounty recon, XSS/vuln detection tooling, CTFs',
       ];
     case 'projects':
       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -143,7 +144,7 @@ export default function Terminal({ username }) {
      /____/`}
         </pre>
         <p className="muted" style={{ marginTop: '0.5rem' }}>
-          software builder // security tinkerer // {username}
+          cybersecurity student // bug hunter // {username}
         </p>
       </div>
 
