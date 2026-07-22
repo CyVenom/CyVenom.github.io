@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FEATURED_REPO_NAMES } from './Projects.jsx';
 
 export default function GithubFeed({ username }) {
   const [repos, setRepos] = useState([]);
@@ -13,8 +14,15 @@ export default function GithubFeed({ username }) {
       })
       .then((data) => {
         if (cancelled) return;
-        const original = Array.isArray(data) ? data.filter((repo) => !repo.fork) : [];
-        setRepos(original.slice(0, 6));
+        const filtered = Array.isArray(data)
+          ? data.filter(
+              (repo) =>
+                !repo.fork &&
+                repo.name !== `${username}.github.io` &&
+                !FEATURED_REPO_NAMES.includes(repo.name)
+            )
+          : [];
+        setRepos(filtered.slice(0, 5));
         setStatus('done');
       })
       .catch(() => {
@@ -27,7 +35,7 @@ export default function GithubFeed({ username }) {
 
   return (
     <section id="github">
-      <div className="section-title">live github feed</div>
+      <div className="section-title">other recent activity</div>
       {status === 'loading' && <p className="muted">fetching repos...</p>}
       {status === 'error' && (
         <p className="muted">couldn't reach the github api. check back later.</p>

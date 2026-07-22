@@ -1,3 +1,12 @@
+export const FEATURED_REPO_NAMES = [
+  'ai-defending-ai',
+  'CyVen_OctoC2',
+  'Reflective_XSS',
+  'CyVen_LivingOfTheLand',
+  'Waybackurl',
+  'E_Learning_Platform',
+];
+
 const PROJECTS = [
   {
     name: 'ai-defending-ai',

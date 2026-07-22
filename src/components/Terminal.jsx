@@ -116,11 +116,9 @@ export default function Terminal({ username }) {
     <div
       onClick={focusInput}
       style={{
-        minHeight: '60vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '2rem 1.5rem',
+        padding: '3rem 1.5rem 2rem',
         maxWidth: 900,
         margin: '0 auto',
         cursor: 'text',
