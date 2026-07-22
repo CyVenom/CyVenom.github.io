@@ -159,18 +159,24 @@ export default function Terminal({ username }) {
       }}
     >
       <div style={{ marginBottom: '1.5rem' }}>
-        <h1
+        <pre
           style={{
             color: 'var(--accent)',
-            fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
-            letterSpacing: '0.06em',
+            fontSize: 'clamp(0.35rem, 1.5vw, 0.7rem)',
+            lineHeight: 1.15,
             margin: 0,
+            overflowX: 'auto',
             textShadow: '0 0 12px rgba(57, 255, 136, 0.35)',
           }}
         >
-          &gt;_ CYBERVENOM
-        </h1>
-        <p style={{ marginTop: '0.4rem', fontSize: '1.1rem' }}>Welcome to My Site</p>
+{String.raw` _________        ___.
+\_   ___ \___.__.\_ |__   ______________  __ ____   ____   ____   _____
+/    \  \<   |  | | __ \_/ __ \_  __ \  \/ // __ \ /    \ /  _ \ /     \
+\     \___\___  | | \_\ \  ___/|  | \/\   /\  ___/|   |  (  <_> )  Y Y  \
+ \______  / ____| |___  /\___  >__|    \_/  \___  >___|  /\____/|__|_|  /
+        \/\/          \/     \/                 \/     \/             \/ `}
+        </pre>
+        <p style={{ marginTop: '0.6rem', fontSize: '1.1rem' }}>Welcome to My Site</p>
         <p className="muted" style={{ marginTop: '0.5rem' }}>
           cybersecurity student // bug hunter // {username}
         </p>
