@@ -8,6 +8,16 @@ const GITHUB_USERNAME = 'CyVenom';
 function App() {
   return (
     <div className="scanlines">
+      <nav className="navbar">
+        <div className="navbar-inner">
+          <span className="prompt">cyvenom</span>
+          <span>
+            <a href="#projects">projects</a>
+            <a href="#github">github</a>
+            <a href="#contact">contact</a>
+          </span>
+        </div>
+      </nav>
       <Terminal username={GITHUB_USERNAME} />
       <div className="container">
         <Projects />

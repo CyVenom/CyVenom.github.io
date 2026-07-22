@@ -127,6 +127,11 @@ export default function Terminal({ username }) {
       }}
     >
       <div style={{ marginBottom: '1.5rem' }}>
+        <img
+          className="avatar"
+          src={`https://github.com/${username}.png`}
+          alt={username}
+        />
         <pre
           style={{
             color: 'var(--accent)',

@@ -48,14 +48,7 @@ export default function Projects() {
             href={p.url}
             target="_blank"
             rel="noreferrer"
-            style={{
-              display: 'block',
-              border: '1px solid var(--border)',
-              borderRadius: 6,
-              padding: '1rem',
-              color: 'var(--fg)',
-              textDecoration: 'none',
-            }}
+            className="card"
           >
             <div style={{ color: 'var(--accent)', fontWeight: 700 }}>{p.name}</div>
             <div style={{ margin: '0.35rem 0' }}>{p.desc}</div>

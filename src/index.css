@@ -123,3 +123,57 @@ section {
 .muted {
   color: var(--muted);
 }
+
+.card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  color: var(--fg);
+  text-decoration: none;
+  background: rgba(20, 30, 24, 0.35);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(57, 255, 136, 0.08);
+  text-decoration: none;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(6px);
+  background: rgba(10, 14, 12, 0.75);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.navbar a {
+  color: var(--muted);
+  margin-left: 1.25rem;
+}
+.navbar a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-dim);
+  margin-bottom: 1rem;
+}

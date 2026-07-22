@@ -6,14 +6,15 @@ export default function GithubFeed({ username }) {
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`)
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=30`)
       .then((res) => {
         if (!res.ok) throw new Error('request failed');
         return res.json();
       })
       .then((data) => {
         if (cancelled) return;
-        setRepos(Array.isArray(data) ? data : []);
+        const original = Array.isArray(data) ? data.filter((repo) => !repo.fork) : [];
+        setRepos(original.slice(0, 6));
         setStatus('done');
       })
       .catch(() => {
@@ -42,14 +43,7 @@ export default function GithubFeed({ username }) {
               href={repo.html_url}
               target="_blank"
               rel="noreferrer"
-              style={{
-                display: 'block',
-                border: '1px solid var(--border)',
-                borderRadius: 6,
-                padding: '0.85rem 1rem',
-                color: 'var(--fg)',
-                textDecoration: 'none',
-              }}
+              className="card"
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <span style={{ color: 'var(--accent)' }}>{repo.name}</span>
