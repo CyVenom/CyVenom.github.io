@@ -66,7 +66,7 @@ function buildResponse(cmdRaw, username) {
     case 'social':
       return [`github   : https://github.com/${username}`];
     case 'resume':
-      return ['no resume linked yet — check the github profile for now.'];
+      return ['resume: coming soon.'];
     case 'ctf':
       return ['currently grinding CTFs and bug bounty recon.', "writeups land in the 'writeups' section as they're published."];
     case 'ls':
