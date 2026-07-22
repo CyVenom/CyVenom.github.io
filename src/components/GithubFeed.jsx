@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { FEATURED_REPO_NAMES } from './Projects.jsx';
 
+// Repos uploaded/imported from elsewhere that aren't original work.
+const EXCLUDED_REPO_NAMES = ['CyVen_A-ULTIMATE-FINDER'];
+
 export default function GithubFeed({ username }) {
   const [repos, setRepos] = useState([]);
   const [status, setStatus] = useState('loading');
@@ -19,7 +22,8 @@ export default function GithubFeed({ username }) {
               (repo) =>
                 !repo.fork &&
                 repo.name !== `${username}.github.io` &&
-                !FEATURED_REPO_NAMES.includes(repo.name)
+                !FEATURED_REPO_NAMES.includes(repo.name) &&
+                !EXCLUDED_REPO_NAMES.includes(repo.name)
             )
           : [];
         setRepos(filtered.slice(0, 5));
