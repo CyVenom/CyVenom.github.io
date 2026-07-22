@@ -8,7 +8,22 @@
   --muted: #5c7a68;
   --border: #1c2b22;
   --error: #ff5555;
+  --card-bg: rgba(20, 30, 24, 0.35);
+  --vignette: rgba(0, 0, 0, 0.35);
   color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4faf6;
+  --fg: #0f2e1c;
+  --accent: #128a45;
+  --accent-dim: #7cd9a3;
+  --muted: #5c7a68;
+  --border: #cfe6da;
+  --error: #c62828;
+  --card-bg: rgba(18, 138, 69, 0.05);
+  --vignette: rgba(0, 0, 0, 0.06);
+  color-scheme: light;
 }
 
 * {
@@ -56,7 +71,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 49;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%);
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, var(--vignette) 100%);
 }
 
 a {
@@ -131,7 +146,7 @@ section {
   padding: 1rem 1.1rem;
   color: var(--fg);
   text-decoration: none;
-  background: rgba(20, 30, 24, 0.35);
+  background: var(--card-bg);
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -168,6 +183,20 @@ section {
 .navbar a:hover {
   color: var(--accent);
   text-decoration: none;
+}
+
+.writeup-body p {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+}
+.writeup-body strong {
+  color: var(--accent);
+}
+.writeup-body code {
+  background: rgba(57, 255, 136, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.85em;
 }
 
 .avatar {

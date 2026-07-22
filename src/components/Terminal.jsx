@@ -4,9 +4,16 @@ const HELP = [
   'available commands:',
   '  whoami       - who is this guy',
   '  skills       - tech stack & tools',
+  '  neofetch     - system info, hacker style',
   '  projects     - jump to projects section',
+  '  writeups     - jump to writeups section',
+  '  stats        - jump to github stats section',
   '  contact      - jump to contact section',
   '  socials      - links to github / other profiles',
+  '  resume       - link to resume',
+  '  ctf          - CTF / bug bounty status',
+  '  ls           - list sections on this page',
+  '  date         - current date/time',
   '  clear        - clear the terminal',
   '  help         - show this list again',
 ];
@@ -32,17 +39,44 @@ function buildResponse(cmdRaw, username) {
         'backend   : Node/Express, SQLite/MySQL, Supabase, PHP',
         'security  : bug bounty recon, XSS/vuln detection tooling, CTFs',
       ];
+    case 'neofetch':
+      return [
+        `${username}@github`,
+        '-----------------',
+        'OS       : Windows / hacker mindset',
+        'Shell    : bash / zsh',
+        'Editor   : whatever ships bugs faster',
+        'Uptime   : since 2021 (created_at on github)',
+        'Langs    : Java, Python, C++, Bash, JavaScript',
+        'Theme    : green-on-black, obviously',
+      ];
     case 'projects':
       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
       return ['scrolling to projects...'];
+    case 'writeups':
+      document.getElementById('writeups')?.scrollIntoView({ behavior: 'smooth' });
+      return ['scrolling to writeups...'];
+    case 'stats':
+      document.getElementById('stats')?.scrollIntoView({ behavior: 'smooth' });
+      return ['scrolling to github stats...'];
     case 'contact':
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
       return ['scrolling to contact...'];
     case 'socials':
     case 'social':
       return [`github   : https://github.com/${username}`];
+    case 'resume':
+      return ['no resume linked yet — check the github profile for now.'];
+    case 'ctf':
+      return ['currently grinding CTFs and bug bounty recon.', "writeups land in the 'writeups' section as they're published."];
+    case 'ls':
+      return ['projects/', 'writeups/', 'stats/', 'contact/'];
+    case 'date':
+      return [new Date().toString()];
     case 'clear':
       return null;
+    case 'sudo rm -rf /':
+      return ["nice try. this isn't your machine."];
     case 'sudo':
     case 'sudo su':
       return ['nice try. permission denied.'];
@@ -154,7 +188,7 @@ export default function Terminal({ username }) {
       <div
         style={{
           border: '1px solid var(--border)',
-          background: 'rgba(15, 21, 18, 0.6)',
+          background: 'var(--card-bg)',
           borderRadius: 6,
           padding: '1rem',
           fontSize: '0.9rem',
